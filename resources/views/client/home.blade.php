@@ -66,6 +66,21 @@
               <li class="nav-item">
                 <a class="nav-link" href="book.html">Book Table</a>
               </li>
+              <li class="nav-item">
+              @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                       <li> <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a></li>
+                    @else
+                        <li><a href="{{ route('login') }}" class="nav-link">Log in</a></li>
+
+                        @if (Route::has('register'))
+                           <li><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+              </li>
             </ul>
             <div class="user_option">
               <a href="" class="user_link">

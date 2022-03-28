@@ -12,14 +12,18 @@ use App\Http\Controllers\ClientController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[Clientcontroller::class, 'home']);
+Route::get('/menu',[Clientcontroller::class, 'menu']);
+Route::get('/about',[Clientcontroller::class, 'about']);
+Route::get('/book',[Clientcontroller::class, 'book']);
+
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/', [ClientController::class,'home']);
-Route::get('/menu', [ClientController::class, 'menu']);
-Route::get('/book', [ClientController::class, 'book']);
-Route::get('/about', [ClientController::class, 'about']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-
+require __DIR__.'/auth.php';
