@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'userType',
     ];
 
     /**
@@ -41,4 +42,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function reservations()
+    {
+        return $this->hasMany(reservation::class);
+    }
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
 }
