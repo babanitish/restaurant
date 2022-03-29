@@ -17,6 +17,7 @@ Route::get('/menu',[Clientcontroller::class, 'menu']);
 Route::get('/about',[Clientcontroller::class, 'about']);
 Route::get('/book',[Clientcontroller::class, 'book']);
 
+Route::get('/redirects',[Clientcontroller::class, 'redirects']);
 
 // Route::get('/', function () {
 //     return view('welcome');

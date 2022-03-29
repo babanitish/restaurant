@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
@@ -18,5 +19,15 @@ class ClientController extends Controller
     }
     public function about(){
         return view('client.about');
+    }
+    function redirects(){
+        $usertype = Auth::user()->userType;
+       // dd($usertype);
+        if($usertype == '1'){
+            return view('admin.admin_home');
+        }
+        else{
+            return view('client.home');
+        }
     }
 }
