@@ -21,8 +21,8 @@ class ClientController extends Controller
         return view('client.about');
     }
     function redirects(){
-        $usertype = Auth::user()->userType;
-       // dd($usertype);
+        $usertype = Auth::user()->usertype;
+        //dd($usertype);
         if($usertype == '1'){
             return view('admin.admin_home');
         }
