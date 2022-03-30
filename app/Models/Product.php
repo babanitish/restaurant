@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Produit extends Model
+class Product extends Model
 {
     use HasFactory;
 
@@ -21,7 +21,7 @@ class Produit extends Model
      *
      * @var string
      */
-    protected $table = 'produits';
+    protected $table = 'products';
 
    /**
      * Indicates if the model should be timestamped.
